@@ -1,5 +1,5 @@
+import { BottomButton } from "@@/entrypoints/component/button.tsx";
 import { createRoot } from "react-dom/client";
-import { BottomButton } from "./component/button";
 
 export default defineContentScript({
 	matches: ["<all_urls>"],

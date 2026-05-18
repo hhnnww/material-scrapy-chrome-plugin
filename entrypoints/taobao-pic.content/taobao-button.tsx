@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { run } from "./run";
+import { handPic } from "./hand_pic";
 
-export function BottomButton() {
+export function TaobaoButton() {
 	return (
 		<Box
 			sx={{
@@ -13,15 +13,13 @@ export function BottomButton() {
 			}}
 		>
 			<Button
-				size="small"
 				variant="contained"
 				disableElevation
-				sx={{ fontSize: "12px" }}
-				onClick={() => {
-					run();
+				onClick={async () => {
+					await handPic();
 				}}
 			>
-				scrapy material
+				make xq
 			</Button>
 		</Box>
 	);

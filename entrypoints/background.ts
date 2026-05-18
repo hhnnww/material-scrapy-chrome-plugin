@@ -12,8 +12,20 @@ export default defineBackground(() => {
 					body: JSON.stringify(message.data),
 				},
 			);
-
+			await browser.notifications.create({
+				title: "采集成功",
+				message: "已经成功采集到后台",
+				iconUrl: browser.runtime.getURL("/icon/128.png"),
+				type: "basic",
+			});
 			return res;
+		} else if (message.type === "copy_taobao_pic") {
+			await browser.notifications.create({
+				title: "复制成功",
+				message: "已复制到剪贴板",
+				iconUrl: browser.runtime.getURL("/icon/128.png"),
+				type: "basic",
+			});
 		}
 	});
 });

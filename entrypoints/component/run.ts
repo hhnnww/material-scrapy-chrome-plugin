@@ -18,7 +18,7 @@ export async function run() {
 		res = xiangsheji_parse_html();
 	}
 
-	console.log(res);
+	console.log(JSON.stringify(res));
 
 	await browser.runtime.sendMessage({
 		type: "fetch",
