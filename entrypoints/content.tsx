@@ -18,6 +18,16 @@ export default defineContentScript({
 			},
 		});
 
-		ui.mount();
+		const current_url = window.location.href;
+		const include_url = [
+			"ibaotu.com",
+			"58pic.com",
+			"699pic.com",
+			"588ku.com",
+			"design006.com",
+		];
+		if (include_url.some((url) => current_url.includes(url))) {
+			ui.mount();
+		}
 	},
 });

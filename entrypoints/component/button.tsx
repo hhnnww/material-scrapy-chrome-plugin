@@ -8,13 +8,14 @@ export function BottomButton() {
 			sx={{
 				position: "fixed",
 				bottom: 0,
-				left: 0,
+				right: 0,
 				zIndex: 9999,
 				padding: "10px",
 			}}
 		>
 			<Button
 				variant="contained"
+				disableElevation
 				onClick={() => {
 					run();
 				}}
