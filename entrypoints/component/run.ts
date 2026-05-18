@@ -2,6 +2,7 @@ import { baotu_parse_html } from "./baotu_run";
 import { qianku_parse_html } from "./qianku_run";
 import { qiantu_parse_html } from "./qiantu_run";
 import { shetu_parse_html } from "./shetu_run";
+import { xiangsheji_parse_html } from "./xiangsheji_run";
 
 export async function run() {
 	let res = null;
@@ -13,7 +14,11 @@ export async function run() {
 		res = shetu_parse_html();
 	} else if (window.location.href.includes("588ku.com")) {
 		res = qianku_parse_html();
+	} else if (window.location.href.includes("design006.com")) {
+		res = xiangsheji_parse_html();
 	}
+
+	console.log(res);
 
 	await browser.runtime.sendMessage({
 		type: "fetch",

@@ -1,5 +1,5 @@
 export function baotu_parse_html() {
-	const mas = document.querySelectorAll("div.item a");
+	const mas = document.querySelectorAll("dl.pic-box>dt>a");
 	const mas_list = [] as { url: string; img: string }[];
 	mas.forEach((el) => {
 		const url = el.getAttribute("href");

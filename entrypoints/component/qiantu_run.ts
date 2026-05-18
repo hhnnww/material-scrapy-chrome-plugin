@@ -1,5 +1,7 @@
 export function qiantu_parse_html() {
-	const mas = document.querySelectorAll("div.qtd-card a");
+	const mas = document.querySelectorAll(
+		".search-floor-container .pic-container .qtd-card a, .fav-theme-box .pic-container .qtd-card a",
+	);
 	const mas_list = [] as { url: string; img: string }[];
 	mas.forEach((el) => {
 		const url = el.getAttribute("href");
