@@ -25,6 +25,7 @@ export default defineContentScript({
 			"699pic.com",
 			"588ku.com",
 			"design006.com",
+			"xiaohongshu.com",
 		];
 		if (include_url.some((url) => current_url.includes(url))) {
 			ui.mount();

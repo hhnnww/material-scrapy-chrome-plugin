@@ -3,6 +3,7 @@ import { qianku_parse_html } from "./qianku_run";
 import { qiantu_parse_html } from "./qiantu_run";
 import { shetu_parse_html } from "./shetu_run";
 import { xiangsheji_parse_html } from "./xiangsheji_run";
+import { xiaohongshu_parse_html } from "./xiaohongshu_run";
 
 export async function run() {
 	let res = null;
@@ -16,6 +17,8 @@ export async function run() {
 		res = qianku_parse_html();
 	} else if (window.location.href.includes("design006.com")) {
 		res = xiangsheji_parse_html();
+	} else if (window.location.href.includes("xiaohongshu.com")) {
+		res = xiaohongshu_parse_html();
 	}
 
 	console.log(JSON.stringify(res));
