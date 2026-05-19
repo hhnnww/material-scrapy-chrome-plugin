@@ -1,3 +1,5 @@
+import { downloadImages } from "./xiaohongshu.content/download";
+
 export default defineBackground(() => {
 	browser.runtime.onMessage.addListener(async (message) => {
 		if (message.type === "fetch") {
@@ -26,6 +28,8 @@ export default defineBackground(() => {
 				iconUrl: browser.runtime.getURL("/icon/128.png"),
 				type: "basic",
 			});
+		} else if (message.type === "down_url") {
+			downloadImages(message);
 		}
 	});
 });
