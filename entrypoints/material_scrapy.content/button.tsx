@@ -8,8 +8,8 @@ export function BottomButton() {
 			sx={{
 				position: "fixed",
 				bottom: "20px",
-				left: "20px",
-				zIndex: 9999,
+				right: "20px",
+				zIndex: 9999999,
 			}}
 		>
 			<Button

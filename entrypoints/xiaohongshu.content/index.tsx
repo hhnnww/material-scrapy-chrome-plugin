@@ -4,7 +4,7 @@ import { XHShandPic } from "./hand_pic";
 
 export default defineContentScript({
 	runAt: "document_end",
-	matches: ["**xiaohongshu.com**"],
+	matches: ["https://www.xiaohongshu.com/*"],
 	main(ctx) {
 		XHShandPic();
 		const ui = createIntegratedUi(ctx, {
