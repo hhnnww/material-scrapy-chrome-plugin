@@ -1,3 +1,4 @@
+import { EnvatodownloadImages } from "./envato.imagedown.content";
 import { downloadImages } from "./xiaohongshu.content/download";
 
 export default defineBackground(() => {
@@ -30,6 +31,8 @@ export default defineBackground(() => {
 			});
 		} else if (message.type === "down_url") {
 			downloadImages(message);
+		} else if (message.type === "envato_down_url") {
+			EnvatodownloadImages(message);
 		}
 	});
 });

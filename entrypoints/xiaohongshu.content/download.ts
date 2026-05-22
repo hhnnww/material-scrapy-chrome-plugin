@@ -1,5 +1,8 @@
 // 假设这是你的下载主函数
-export const downloadImages = async (message: { data: string[] }) => {
+export const downloadImages = async (message: {
+	data: string[];
+	prefix: string;
+}) => {
 	// 1. 获取当前时间并自动补零 (月、日、时、分、秒)
 	const now = new Date();
 	const month = String(now.getMonth() + 1).padStart(2, "0"); // 月份从 0 开始，需 +1
@@ -21,7 +24,7 @@ export const downloadImages = async (message: { data: string[] }) => {
 			await browser.downloads.download({
 				url: item,
 				// 保存路径形如: xhs/0518_175708/001.jpg
-				filename: `xhs/${folderName}/${fileNumber}.jpg`,
+				filename: `${message.prefix}/${folderName}/${fileNumber}.jpg`,
 				conflictAction: "uniquify", // 若有同名文件自动重命名
 			});
 			console.log(`第 ${fileNumber} 张图片下载成功`);

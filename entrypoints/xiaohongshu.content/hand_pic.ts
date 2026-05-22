@@ -46,5 +46,9 @@ export const XHShandPic = () => {
 		}
 	});
 
-	browser.runtime.sendMessage({ type: "down_url", data: img_list });
+	browser.runtime.sendMessage({
+		type: "down_url",
+		data: img_list,
+		prefix: "xhs",
+	});
 };

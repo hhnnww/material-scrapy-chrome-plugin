@@ -1,4 +1,6 @@
 import { baotu_parse_html } from "./baotu_run";
+import { envato_parse_html } from "./envato_run";
+import { freepik_parse_html } from "./freepik";
 import { qianku_parse_html } from "./qianku_run";
 import { qiantu_parse_html } from "./qiantu_run";
 import { shetu_parse_html } from "./shetu_run";
@@ -19,6 +21,10 @@ export async function run() {
 		res = xiangsheji_parse_html();
 	} else if (window.location.href.includes("xiaohongshu.com")) {
 		res = xiaohongshu_parse_html();
+	} else if (window.location.href.includes("magnific.com")) {
+		res = freepik_parse_html();
+	} else if (window.location.href.includes("app.envato.com")) {
+		res = envato_parse_html();
 	}
 
 	console.log(JSON.stringify(res));

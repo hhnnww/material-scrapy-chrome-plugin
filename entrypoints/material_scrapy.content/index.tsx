@@ -26,6 +26,8 @@ export default defineContentScript({
 			"588ku.com",
 			"design006.com",
 			"xiaohongshu.com",
+			"magnific.com",
+			"envato.com",
 		];
 		if (include_url.some((url) => current_url.includes(url))) {
 			ui.mount();
